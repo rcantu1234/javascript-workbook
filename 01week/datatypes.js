@@ -5,6 +5,7 @@ function dateAndTime() {
 }
 console.log(dateAndTime());
 
+
 // Create a function (numberToString(num)) with argument that converts a number or integer to a string
 // when using the toString() method.
 function numberToString(num) {
