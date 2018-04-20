@@ -12,8 +12,10 @@ function rockPaperScissors(hand1, hand2) {
 
   // Write code here
   if(hand1 === "paper") {
-    if(hand2 === "rock")
+    if(hand2 === "rock") {
       console.log("Hand One Wins!!!");
+  } else if (hand2 === "scissors") {
+    console.log("Hand Two Wins!!!");
   }
 }
 
