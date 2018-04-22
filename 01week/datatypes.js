@@ -1,5 +1,6 @@
 'use strict'
 // Create a function that returns the current date by using the new Date() object.
+// Test comments
 function dateAndTime() {
   const day = "Today is : " + new Date();
   return day;
