@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 const assert = require('assert');
 const readline = require('readline');
@@ -9,14 +9,24 @@ const rl = readline.createInterface({
 
 
 function rockPaperScissors(hand1, hand2) {
-
   // Write code here
-  if(hand1 === "paper") {
-    if(hand2 === "rock") {
-      console.log("Hand One Wins!!!");
-  } else if (hand2 === "scissors") {
-    console.log("Hand Two Wins!!!");
-  }
+  // Create code with if statements for rock, paper, and scissors to execute win, loss, or tie.
+  // Add the toLowerCase() and trim() functions to pass tests.
+  if(hand1.toLowerCase() === 'paper' && hand2 === 'rock') {
+    return "Hand one wins!";
+  } else if (hand1.toLowerCase() === 'paper' && hand2.toLowerCase() === 'scissors') {
+    return "Hand two wins!";
+  } else if (hand1.toLowerCase().trim() === 'scissors' && hand2.toLowerCase() === 'rock') {
+    return "Hand two wins!";
+  } else if (hand1.toLowerCase() === 'scissors' && hand2.trim() === 'paper') {
+    return "Hand one wins!";
+  } else if (hand1.toLowerCase().trim() === 'rock' && hand2.toLowerCase() === 'scissors') {
+    return "Hand one wins!";
+  } else if (hand1.toLowerCase() === 'rock' && hand2.trim() === 'paper') {
+    return "Hand two wins!";
+  } else if(hand1 === hand1) {
+    return "It's a tie!";
+ }
 }
 
 function getPrompt() {
