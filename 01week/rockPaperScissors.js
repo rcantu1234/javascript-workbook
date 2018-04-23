@@ -7,7 +7,7 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-// function to play rockPaperScissors
+// function to play rockPaperScissors again
 function rockPaperScissors(hand1, hand2) {
   // Write code here
   // Create code with if statements for rock, paper, and scissors to execute win, loss, or tie.
