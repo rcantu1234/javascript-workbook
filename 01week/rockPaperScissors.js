@@ -12,6 +12,7 @@ function rockPaperScissors(hand1, hand2) {
   // Write code here
   // Create code with if statements for rock, paper, and scissors to execute win, loss, or tie.
   // Add the toLowerCase() and trim() functions to pass tests.
+  // Test with pulling requests
   if(hand1.toLowerCase() === 'paper' && hand2 === 'rock') {
     return "Hand one wins!";
   } else if (hand1.toLowerCase() === 'paper' && hand2.toLowerCase() === 'scissors') {
