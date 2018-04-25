@@ -7,12 +7,11 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-// function to play rockPaperScissors
+// Create function to play rockPaperScissors
 function rockPaperScissors(hand1, hand2) {
   // Write code here
   // Create code with if statements for rock, paper, and scissors to execute win, loss, or tie.
   // Add the toLowerCase() and trim() functions to pass tests.
-  // Test with pulling requests
   if(hand1.toLowerCase() === 'paper' && hand2 === 'rock') {
     return "Hand one wins!";
   } else if (hand1.toLowerCase() === 'paper' && hand2.toLowerCase() === 'scissors') {
@@ -27,7 +26,7 @@ function rockPaperScissors(hand1, hand2) {
     return "Hand two wins!";
   } else if(hand1 === hand1) {
     return "It's a tie!";
- }
+  }
 }
 
 function getPrompt() {
@@ -59,6 +58,13 @@ if (typeof describe === 'function') {
       assert.equal(rockPaperScissors('Paper', 'SCISSORS'), "Hand two wins!");
       assert.equal(rockPaperScissors('rock ', 'sCiSsOrs'), "Hand one wins!");
     });
+
+    if('should detect an invalid input', () => {
+      assert.equal(rockPaperScissors('rock', ''), "Invalid Input, please try again");
+    })
+
+
+
   });
 } else {
 
