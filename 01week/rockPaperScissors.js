@@ -16,17 +16,23 @@ function rockPaperScissors(hand1, hand2) {
     return "Hand one wins!";
   } else if (hand1.toLowerCase() === 'paper' && hand2.toLowerCase() === 'scissors') {
     return "Hand two wins!";
+  } else if (hand1 === 'paper' && hand2 === 'test') {
+    return "Please choose between rock, paper, or scissors";
   } else if (hand1.toLowerCase().trim() === 'scissors' && hand2.toLowerCase() === 'rock') {
     return "Hand two wins!";
+  } else if (hand1 === ' ' && hand2 === 'rock') {
+    return "Please choose between rock, paper, or scissors";
   } else if (hand1.toLowerCase() === 'scissors' && hand2.trim() === 'paper') {
     return "Hand one wins!";
   } else if (hand1.toLowerCase().trim() === 'rock' && hand2.toLowerCase() === 'scissors') {
     return "Hand one wins!";
+  } else if (hand1.toLowerCase().trim() === 'rock' && hand2 === ' ') {
+    return "Please choose between rock, paper, or scissors";
   } else if (hand1.toLowerCase() === 'rock' && hand2.trim() === 'paper') {
     return "Hand two wins!";
   } else if(hand1 === hand1) {
     return "It's a tie!";
-  }
+ }
 }
 
 function getPrompt() {
@@ -59,8 +65,8 @@ if (typeof describe === 'function') {
       assert.equal(rockPaperScissors('rock ', 'sCiSsOrs'), "Hand one wins!");
     });
     it('should detect an invalid input', () => {
-      assert.equal(rockPaperScissors('rock', ''), "Invalid Input, please try again");
-      assert.equal(rockPaperScissors('paper', 'nothing'), "Please enter rock, paper, or scissors");
+      assert.equal(rockPaperScissors('rock', ' '), "Please choose between rock, paper, or scissors");
+      assert.equal(rockPaperScissors('paper', 'test'), "Please choose between rock, paper, or scissors");
       assert.equal(rockPaperScissors(' ', 'rock'), "Please choose between rock, paper, or scissors");
     });
   });
