@@ -58,8 +58,7 @@ if (typeof describe === 'function') {
       assert.equal(rockPaperScissors('Paper', 'SCISSORS'), "Hand two wins!");
       assert.equal(rockPaperScissors('rock ', 'sCiSsOrs'), "Hand one wins!");
     });
-
-    if('should detect an invalid input', () => {
+    it('should detect an invalid input', () => {
       assert.equal(rockPaperScissors('rock', ''), "Invalid Input, please try again");
       assert.equal(rockPaperScissors('paper', 'nothing'), "Please enter rock, paper, or scissors");
       assert.equal(rockPaperScissors(' ', 'rock'), "Please choose between rock, paper, or scissors");
