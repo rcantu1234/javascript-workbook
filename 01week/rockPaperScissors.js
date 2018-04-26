@@ -62,10 +62,7 @@ if (typeof describe === 'function') {
       assert.equal(rockPaperScissors('rock', ''), "Invalid Input, please try again");
       assert.equal(rockPaperScissors('paper', 'nothing'), "Please enter rock, paper, or scissors");
       assert.equal(rockPaperScissors(' ', 'rock'), "Please choose between rock, paper, or scissors");
-    })
-
-
-
+    });
   });
 } else {
 
