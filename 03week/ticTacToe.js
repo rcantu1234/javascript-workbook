@@ -120,10 +120,25 @@ function checkForWin() {
  ];
    playerTurn = "X";
  }
+ return true;
 }
 
 function ticTacToe(row, column) {
   // Your code here
+  try {
+    if(row > 2) throw 'Row number too high! Please choose ' +
+    'another row!!!';
+  } catch(err) {
+    console.log(err);
+  }
+
+  try {
+    if(column > 2) throw 'Column number too high! Please choose ' +
+    'another column!!!';
+  } catch(err) {
+    console.log(err);
+  }
+
   if(board[row][column] === ' ') {
     if(playerTurn == 'X') {
       if(row == 0 && column == 0) {
@@ -168,12 +183,10 @@ function ticTacToe(row, column) {
         board[row][column] = 'O';
       }
     }
-
   } else if(board[row][column] !== ' '){
     console.log('Please choose another spot.  Try again!!!');
     playerTurn = playerTurn == "X" ? "O" : "X";
   }
-
 }
 
 
