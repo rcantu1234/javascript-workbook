@@ -183,6 +183,16 @@ function ticTacToe(row, column) {
             board[row][column] = 'O';
           }
         }
+        // else {
+        //   console.log('Resetting game.  It is a tie.');
+        //   board = [
+        //   [' ', ' ', ' '],
+        //   [' ', ' ', ' '],
+        //   [' ', ' ', ' ']
+        // ];
+        // playerTurn = "X";
+        // return true;
+        // }
       }
   } catch(err) {
     console.log(err);
