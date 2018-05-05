@@ -126,69 +126,68 @@ function checkForWin() {
 function ticTacToe(row, column) {
   // Your code here
   try {
-    if(row > 2) throw 'Row number too high! Please choose ' +
-    'another row!!!';
-  } catch(err) {
-    console.log(err);
-  }
-
-  try {
-    if(column > 2) throw 'Column number too high! Please choose ' +
-    'another column!!!';
-  } catch(err) {
-    console.log(err);
-  }
-
-  if(board[row][column] === ' ') {
-    if(playerTurn == 'X') {
-      if(row == 0 && column == 0) {
-        board[row][column] = 'X';
-      } else if(row == 0 && column == 1) {
-        board[row][column] = 'X';
-      } else if(row == 0 && column == 2) {
-        board[row][column] = 'X';
-      } else if(row == 1 && column == 0) {
-        board[row][column] = 'X';
-      } else if(row == 1 && column == 1) {
-        board[row][column] = 'X';
-      } else if(row == 1 && column == 2) {
-        board[row][column] = 'X';
-      } else if(row == 2 && column == 0) {
-        board[row][column] = 'X';
-      } else if(row == 2 && column == 1) {
-        board[row][column] = 'X';
-      } else if(row == 2 && column == 2) {
-        board[row][column] = 'X';
-      }
+    if(row > 2) {
+      playerTurn = playerTurn == "X" ? "O" : "X";
+      throw 'Row number too high! Please choose ' +
+      'another number!!!';
+    } else if(column > 2) {
+      playerTurn = playerTurn == "X" ? "O" : "X";
+      throw 'Column number too high! Please choose ' +
+      'another number!!!';
+    } else if(board[row][column] !== ' '){
+      console.log('Please choose another spot.  Try again!!!');
+      playerTurn = playerTurn == "X" ? "O" : "X";
     }
 
-    if(playerTurn == 'O') {
-      if(row == 0 && column == 0) {
-        board[row][column] = 'O';
-      } else if(row == 0 && column == 1) {
-        board[row][column] = 'O';
-      } else if(row == 0 && column == 2) {
-        board[row][column] = 'O';
-      } else if(row == 1 && column == 0) {
-        board[row][column] = 'O';
-      } else if(row == 1 && column == 1) {
-        board[row][column] = 'O';
-      } else if(row == 1 && column == 2) {
-        board[row][column] = 'O';
-      } else if(row == 2 && column == 0) {
-        board[row][column] = 'O';
-      } else if(row == 2 && column == 1) {
-        board[row][column] = 'O';
-      } else if(row == 2 && column == 2) {
-        board[row][column] = 'O';
+      if(board[row][column] === ' ') {
+        if(playerTurn == 'X') {
+          if(row == 0 && column == 0) {
+            board[row][column] = 'X';
+          } else if(row == 0 && column == 1) {
+            board[row][column] = 'X';
+          } else if(row == 0 && column == 2) {
+            board[row][column] = 'X';
+          } else if(row == 1 && column == 0) {
+            board[row][column] = 'X';
+          } else if(row == 1 && column == 1) {
+            board[row][column] = 'X';
+          } else if(row == 1 && column == 2) {
+            board[row][column] = 'X';
+          } else if(row == 2 && column == 0) {
+            board[row][column] = 'X';
+          } else if(row == 2 && column == 1) {
+            board[row][column] = 'X';
+          } else if(row == 2 && column == 2) {
+            board[row][column] = 'X';
+          }
+        }
+
+        if(playerTurn == 'O') {
+          if(row == 0 && column == 0) {
+            board[row][column] = 'O';
+          } else if(row == 0 && column == 1) {
+            board[row][column] = 'O';
+          } else if(row == 0 && column == 2) {
+            board[row][column] = 'O';
+          } else if(row == 1 && column == 0) {
+            board[row][column] = 'O';
+          } else if(row == 1 && column == 1) {
+            board[row][column] = 'O';
+          } else if(row == 1 && column == 2) {
+            board[row][column] = 'O';
+          } else if(row == 2 && column == 0) {
+            board[row][column] = 'O';
+          } else if(row == 2 && column == 1) {
+            board[row][column] = 'O';
+          } else if(row == 2 && column == 2) {
+            board[row][column] = 'O';
+          }
+        }
       }
-    }
-  } else if(board[row][column] !== ' '){
-    console.log('Please choose another spot.  Try again!!!');
-    playerTurn = playerTurn == "X" ? "O" : "X";
+  } catch(err) {
+    console.log(err);
   }
 }
-
 
 function getPrompt() {
   printBoard();
