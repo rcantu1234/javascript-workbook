@@ -112,11 +112,14 @@ function diagonalWin() {
 
 function checkForWin() {
   // Your code here
-  horizontalWin();
-  verticalWin();
-  diagonalWin();
-
-  return true;
+  if(horizontalWin() || verticalWin() || diagonalWin()) {
+   board = [
+   [' ', ' ', ' '],
+   [' ', ' ', ' '],
+   [' ', ' ', ' ']
+ ];
+   playerTurn = "X";
+ }
 }
 
 function ticTacToe(row, column) {
@@ -171,7 +174,6 @@ function getPrompt() {
   printBoard();
   checkForWin();
   playerTurn = playerTurn == "X" ? "O" : "X";
-  // checkForWin();
   console.log();
   console.log("It's Player " + playerTurn + "'s turn.");
 
