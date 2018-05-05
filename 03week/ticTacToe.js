@@ -124,6 +124,7 @@ function checkForWin() {
 
 function ticTacToe(row, column) {
   // Your code here
+  if(board[row][column] === ' ') {
     if(playerTurn == 'X') {
       if(row == 0 && column == 0) {
         board[row][column] = 'X';
@@ -167,6 +168,12 @@ function ticTacToe(row, column) {
         board[row][column] = 'O';
       }
     }
+
+  } else if(board[row][column] !== ' '){
+    console.log('Please choose another spot.  Try again!!!');
+    playerTurn = playerTurn == "X" ? "O" : "X";
+  }
+
 }
 
 
