@@ -21,8 +21,13 @@ function printStacks() {
   console.log("c: " + stacks.c);
 }
 
-function movePiece() {
+function movePiece(startStack, endStack) {
   // Your code here
+  stacks[endStack].push(stacks[startStack].pop());
+
+  stacks[endStack].forEach(item => {
+    console.log(item);
+  })
 
 }
 
@@ -38,6 +43,7 @@ function checkForWin() {
 
 function towersOfHanoi(startStack, endStack) {
   // Your code here
+  movePiece('a', 'b');
 
 }
 
