@@ -22,13 +22,24 @@ function printStacks() {
 }
 
 function movePiece(startStack, endStack) {
-  // Your code here
-  stacks[endStack].push(stacks[startStack].pop());
+  try {
+     if(startStack == 'a' && (endStack === 'b' || endStack === 'c')) {
+       return true;
+     } else if (startStack === 'b' && (endStack === 'a' || endStack === 'c')) {
+       return true;
+     } else if (startStack === 'c' && (endStack === 'a' || endStack === 'b')) {
+       return true;
+     } else {
+       throw 'Please enter a valid letter.  Please don\'t enter the same letter.'
+     }
+      stacks[endStack].push(stacks[startStack].pop());
 
-  stacks[endStack].forEach(item => {
-    console.log(item);
-  })
-
+      stacks[endStack].forEach(item => {
+        console.log(item);
+      })
+  } catch(err) {
+    console.log(err);
+  }
 }
 
 function isLegal() {
