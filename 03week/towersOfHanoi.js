@@ -23,16 +23,14 @@ function printStacks() {
 
 function movePiece(startStack, endStack) {
   try {
-    if(startStack === ' ' && endStack === ' ') {
-      throw 'Please enter a, b, or c!';
-    }
-
-     if(startStack == 'a' && (endStack === 'b' || endStack === 'c')) {
+     if(startStack === 'a' && (endStack === 'b' || endStack === 'c')) {
        stacks[endStack].push(stacks[startStack].pop());
        return true;
      } else if (startStack === 'b' && (endStack === 'a' || endStack === 'c')) {
+       stacks[endStack].push(stacks[startStack].pop());
        return true;
      } else if (startStack === 'c' && (endStack === 'a' || endStack === 'b')) {
+       stacks[endStack].push(stacks[startStack].pop());
        return true;
      } else {
            throw 'Please enter a valid letter.  Please don\'t enter the same letter.'
@@ -45,8 +43,9 @@ function movePiece(startStack, endStack) {
 function isLegal(startStack, endStack) {
   // Your code here
   try {
-    if(startStack < endStack) {
+    if((stacks[startStack - 1] < stacks[endStack - 1]) || stacks[endStack] === 0) {
       throw 'Illegal move!  Please choose another move.';
+      return true;
     }
   } catch(err) {
     console.log(err);
@@ -60,7 +59,8 @@ function checkForWin() {
 
 function towersOfHanoi(startStack, endStack) {
   // Your code here
-  isLegal(movePiece(startStack, endStack));
+    isLegal(startStack, endStack);
+    movePiece(startStack, endStack);
 
 }
 
