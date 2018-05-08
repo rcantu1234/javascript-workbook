@@ -22,7 +22,7 @@ function printStacks() {
 }
 
 function movePiece(startStack, endStack) {
-  try {
+  // try {
      if(startStack === 'a' && (endStack === 'b' || endStack === 'c')) {
        return true;
      } else if (startStack === 'b' && (endStack === 'a' || endStack === 'c')) {
@@ -30,13 +30,17 @@ function movePiece(startStack, endStack) {
      } else if (startStack === 'c' && (endStack === 'a' || endStack === 'b')) {
        return true;
      }
-  } catch(err) {
-    console.log(err);
-  }
+     isLegal();
+  // } catch(err) {
+  //   console.log(err);
+  // }
 }
 
 const isValid = (startStack, endStack) => {
   try {
+    if(startStack === '' || endStack === '') {
+      throw 'Please enter a, b, or c';
+    }
     if((startStack !== 'a') && (endStack !== 'b' || endStack !== 'c')) {
       throw 'Please enter a valid letter.  Please don\'t enter the same letter.';
     }
@@ -54,9 +58,10 @@ const isValid = (startStack, endStack) => {
 function isLegal(startStack, endStack) {
   // Your code here
   try {
-    if(stacks[endStack - 1] < stacks[endStack - 1] || stacks[startStack] == 0 || stacks[endStack] == 0) {
-      throw 'Illegal move!  Please choose another move.';
-      return false;
+    // if(stacks[startStack][stacks[startStack].length - 1] < stacks[endStack][stacks[endStack].length - 1]) {
+    if(stacks[startStack].length === 0) {
+      throw 'Illegal move!  You can\'t place a bigger tile on top of a smaller tile.  Please choose another move.';
+      return true;
     }
   } catch(err) {
     console.log(err);
@@ -66,20 +71,17 @@ function isLegal(startStack, endStack) {
 function checkForWin() {
   // Your code here
   if(stacks.b.length === 4 || stacks.c.length === 4) {
-    return true;
+    console.log('You win!!!');
   }
 }
 
 function towersOfHanoi(startStack, endStack) {
   // Your code here
   try {
-    if(startStack === '' || endStack === '') {
-      throw 'Please enter a, b, or c';
-    }
     if(movePiece(startStack, endStack)) {
       return stacks[endStack].push(stacks[startStack].pop());
     }
-    isValid(startStack, endStack);
+    // isValid(startStack, endStack);
     isLegal(startStack, endStack);
     checkForWin();
   } catch(err) {
