@@ -81,6 +81,7 @@ function towersOfHanoi(startStack, endStack) {
     }
     isValid(startStack, endStack);
     isLegal(startStack, endStack);
+    checkForWin();
   } catch(err) {
     console.log(err);
   }
