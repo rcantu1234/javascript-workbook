@@ -54,9 +54,9 @@ const isValid = (startStack, endStack) => {
 function isLegal(startStack, endStack) {
   // Your code here
   try {
-    if((stacks[startStack - 1] < stacks[endStack - 1]) || stacks[startStack] === 0 || stacks[endStack] === 0) {
+    if(stacks[endStack - 1] < stacks[endStack - 1] || stacks[startStack] == 0 || stacks[endStack] == 0) {
       throw 'Illegal move!  Please choose another move.';
-      return true;
+      return false;
     }
   } catch(err) {
     console.log(err);
@@ -66,7 +66,7 @@ function isLegal(startStack, endStack) {
 function checkForWin() {
   // Your code here
   if(stacks.b.length === 4 || stacks.c.length === 4) {
-    return
+    return true;
   }
 }
 
