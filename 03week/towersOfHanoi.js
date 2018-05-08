@@ -1,6 +1,9 @@
 'use strict';
 
-// 1.  TEST
+// 1.  Figure how to pop() the last element into the chosen array in the movePiece().
+// 2.  Create code to test legal and illegal moves.
+// 3.  Need to validate moves for the chosen stacks (a, b, and c);
+// 4. Add code to checkForWin() to determine if player has won.
 
 const assert = require('assert');
 const readline = require('readline');
@@ -22,7 +25,6 @@ function printStacks() {
 }
 
 function movePiece(startStack, endStack) {
-  // try {
      if(startStack === 'a' && (endStack === 'b' || endStack === 'c')) {
        return true;
      } else if (startStack === 'b' && (endStack === 'a' || endStack === 'c')) {
@@ -30,10 +32,6 @@ function movePiece(startStack, endStack) {
      } else if (startStack === 'c' && (endStack === 'a' || endStack === 'b')) {
        return true;
      }
-     isLegal();
-  // } catch(err) {
-  //   console.log(err);
-  // }
 }
 
 const isValid = (startStack, endStack) => {
@@ -58,10 +56,10 @@ const isValid = (startStack, endStack) => {
 function isLegal(startStack, endStack) {
   // Your code here
   try {
-    // if(stacks[startStack][stacks[startStack].length - 1] < stacks[endStack][stacks[endStack].length - 1]) {
-    if(stacks[startStack].length === 0) {
+
+    if(stacks.b[stacks[startStack]] < stacks.c[stacks[endStack]] || stacks.b.length == 0 || stacks.c.length == 0) {
       throw 'Illegal move!  You can\'t place a bigger tile on top of a smaller tile.  Please choose another move.';
-      return true;
+      return false;
     }
   } catch(err) {
     console.log(err);
@@ -72,21 +70,25 @@ function checkForWin() {
   // Your code here
   if(stacks.b.length === 4 || stacks.c.length === 4) {
     console.log('You win!!!');
+    return true;
+    let stacks = {
+      a: [4, 3, 2, 1],
+      b: [],
+      c: []
+    };
+  } else {
+    return false;
   }
 }
 
 function towersOfHanoi(startStack, endStack) {
   // Your code here
-  try {
     if(movePiece(startStack, endStack)) {
       return stacks[endStack].push(stacks[startStack].pop());
     }
-    // isValid(startStack, endStack);
-    isLegal(startStack, endStack);
+    isValid(startStack, endStack);
+    // isLegal(startStack, endStack);
     checkForWin();
-  } catch(err) {
-    console.log(err);
-  }
 }
 
 function getPrompt() {
