@@ -22,33 +22,12 @@ function printStacks() {
 }
 
 function movePiece(startStack, endStack) {
-  // try {
-  //   if(startStack !== 'a' && (endStack !== 'b' || endStack !== 'c')) {
-  //     throw 'Please enter a valid letter.  Please don\'t enter the same letter.';
-  //   }
-  //   if(startStack !== 'b' && (endStack !== 'a' || endStack !== 'c')) {
-  //     throw 'Please enter a valid letter.  Please don\'t enter the same letter.';
-  //   }
-  //   if(startStack !== 'c' && (endStack !== 'a' || endStack !== 'b')) {
-  //     throw 'Please enter a valid letter.  Please don\'t enter the same letter.';
-  //   }
-  //   if(startStack === ' ' && endStack === ' ') {
-  //     throw 'Try again! Please enter a, b, or c';
-  //   } else {
-  //     return stacks[endStack].push(stacks[startStack].pop());
-  //   }
-  // } catch(err) {
-  //   console.log(err);
-  // }
   try {
      if(startStack === 'a' && (endStack === 'b' || endStack === 'c')) {
-       stacks[endStack].push(stacks[startStack].pop());
        return true;
      } else if (startStack === 'b' && (endStack === 'a' || endStack === 'c')) {
-       stacks[endStack].push(stacks[startStack].pop());
        return true;
      } else if (startStack === 'c' && (endStack === 'a' || endStack === 'b')) {
-       stacks[endStack].push(stacks[startStack].pop());
        return true;
      }
   } catch(err) {
@@ -58,13 +37,13 @@ function movePiece(startStack, endStack) {
 
 const isValid = (startStack, endStack) => {
   try {
-    if(startStack !== 'a' && (endStack !== 'b' || endStack !== 'c')) {
+    if((startStack !== 'a') && (endStack !== 'b' || endStack !== 'c')) {
       throw 'Please enter a valid letter.  Please don\'t enter the same letter.';
     }
-    if(startStack !== 'b' && (endStack !== 'a' || endStack !== 'c')) {
+    if((startStack !== 'b') && (endStack !== 'a' || endStack !== 'c')) {
       throw 'Please enter a valid letter.  Please don\'t enter the same letter.';
     }
-    if(startStack !== 'c' && (endStack !== 'a' || endStack !== 'b')) {
+    if((startStack !== 'c') && (endStack !== 'a' || endStack !== 'b')) {
       throw 'Please enter a valid letter.  Please don\'t enter the same letter.';
     }
   } catch(err) {
@@ -75,7 +54,7 @@ const isValid = (startStack, endStack) => {
 function isLegal(startStack, endStack) {
   // Your code here
   try {
-    if((stacks[startStack - 1] < stacks[endStack - 1]) || stacks[endStack] === 0) {
+    if((stacks[startStack - 1] < stacks[endStack - 1]) || stacks[startStack] === 0 || stacks[endStack] === 0) {
       throw 'Illegal move!  Please choose another move.';
       return true;
     }
@@ -86,7 +65,9 @@ function isLegal(startStack, endStack) {
 
 function checkForWin() {
   // Your code here
-  if(stacks.)
+  if(stacks.b.length === 4 || stacks.c.length === 4) {
+    return
+  }
 }
 
 function towersOfHanoi(startStack, endStack) {
@@ -95,14 +76,14 @@ function towersOfHanoi(startStack, endStack) {
     if(startStack === '' || endStack === '') {
       throw 'Please enter a, b, or c';
     }
+    if(movePiece(startStack, endStack)) {
+      return stacks[endStack].push(stacks[startStack].pop());
+    }
     isValid(startStack, endStack);
     isLegal(startStack, endStack);
-    movePiece(startStack, endStack);
   } catch(err) {
     console.log(err);
   }
-
-
 }
 
 function getPrompt() {
