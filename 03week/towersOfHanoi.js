@@ -56,7 +56,6 @@ const isValid = (startStack, endStack) => {
 function isLegal(startStack, endStack) {
   // Your code here
   try {
-
     if(stacks.b[stacks[startStack]] < stacks.c[stacks[endStack]] || stacks.b.length == 0 || stacks.c.length == 0) {
       throw 'Illegal move!  You can\'t place a bigger tile on top of a smaller tile.  Please choose another move.';
       return false;
@@ -69,13 +68,7 @@ function isLegal(startStack, endStack) {
 function checkForWin() {
   // Your code here
   if(stacks.b.length === 4 || stacks.c.length === 4) {
-    console.log('You win!!!');
     return true;
-    let stacks = {
-      a: [4, 3, 2, 1],
-      b: [],
-      c: []
-    };
   } else {
     return false;
   }
@@ -86,9 +79,13 @@ function towersOfHanoi(startStack, endStack) {
     if(movePiece(startStack, endStack)) {
       return stacks[endStack].push(stacks[startStack].pop());
     }
-    isValid(startStack, endStack);
-    // isLegal(startStack, endStack);
-    checkForWin();
+
+    if(checkForWin()) {
+      console.log('You win!!!');
+    } else {
+      isValid(startStack, endStack);
+    }
+
 }
 
 function getPrompt() {
