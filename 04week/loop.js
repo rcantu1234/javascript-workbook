@@ -23,14 +23,19 @@ console.log('\n');
 
 // For loop to print 1000 numbers
 console.log('For Loop');
-// for (let i = 1; i <= 1000; i++) {
-//   console.log(i);
-// }
-// console.log('\n');
+for (let i = 1; i <= 1000; i++) {
+  console.log(i);
+}
+console.log('\n');
 // do...while loop to print 1000 numbers
-// console.log('do...While Loop');
-// let k = 1;
-// do {
-//     console.log(k);
-//     k++;
-// } while(k <= 1000);
+console.log('do...While Loop');
+let k = 1;
+do {
+    console.log(k);
+    k++;
+} while(k <= 1000);
+
+// When is a for loop better than a while loop?
+// How is the readability of the code affected?
+// What is the difference between a for loop and a for...in loop?
+// What is the difference between a while loop and a do...while loop?
