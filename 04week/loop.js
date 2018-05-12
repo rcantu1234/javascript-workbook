@@ -10,3 +10,8 @@ const persons = {
 for(const person in persons) {
     console.log(`${person}`);
 }
+
+let i = 1;
+while(i <= 1000) {
+  console.log(i);
+}
