@@ -1,3 +1,4 @@
+// Created persons object
 const persons = {
   firstName: "Jane",
   lastName: "Doe",
@@ -5,6 +6,7 @@ const persons = {
   gender: "female"
 }
 
+// For loop to view keys
 for(const person in persons) {
     console.log(`${person}`);
 }
