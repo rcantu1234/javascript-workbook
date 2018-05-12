@@ -6,5 +6,5 @@ const persons = {
 }
 
 for(const person in persons) {
-    console.log(`${prop}`);
+    console.log(`${person}`);
 }
