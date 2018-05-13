@@ -27,6 +27,7 @@ for (let i = 1; i <= 1000; i++) {
   console.log(i);
 }
 console.log('\n');
+
 // do...while loop to print 1000 numbers
 console.log('do...While Loop');
 let k = 1;
@@ -47,4 +48,4 @@ do {
 
 // 4.  What is the difference between a while loop and a do...while loop?
 // The difference is when the condition gets evaluated.  The do...while loop will always run
-// at least once.  The while loop's test expression is checked at first. 
+// at least once.  The while loop's test expression is checked at first.
