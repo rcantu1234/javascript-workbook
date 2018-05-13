@@ -35,7 +35,16 @@ do {
     k++;
 } while(k <= 1000);
 
-// When is a for loop better than a while loop?
-// How is the readability of the code affected?
-// What is the difference between a for loop and a for...in loop?
-// What is the difference between a while loop and a do...while loop?
+// 1.  When is a for loop better than a while loop?
+// For loops have better performance than while loops because they have an explicit loop counter.
+
+// 2.  How is the readability of the code affected?
+// It is easier to reaad the setup, test expression, and increment.
+
+// 3.  What is the difference between a for loop and a for...in loop?
+// When creating objects, the for-in loop allows you to get the property name in the iteration variable.
+// With the for loop you have control over the iteration variable, such as iterating over even indices.
+
+// 4.  What is the difference between a while loop and a do...while loop?
+// The difference is when the condition gets evaluated.  The do...while loop will always run
+// at least once.  The while loop's test expression is checked at first. 
