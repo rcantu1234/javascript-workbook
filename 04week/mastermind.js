@@ -84,7 +84,6 @@ function mastermind(guess) {
       }
       console.log('not the solution, guess again')
     }
-
   }else {
     console.log('invalid guess')
   }
