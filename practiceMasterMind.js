@@ -3,18 +3,6 @@
 let solution = 'abcd';
 const letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
 
-const isValidGuess = (guess) => {
-  const guessAr = guess.split('');
-  const allLettersAcceptable = true;
-
-  guessArr.forEach((letter, index) => {
-    if(letters.indexOf(letter) == -1) {
-      console.log(letter);
-      allLettersAcceptable = false;
-    }
-  })
-  return guess.length == 4 && allLettersAcceptable;
-}
 // const isValidGuess = (guess) => {
 //   const guessArr = guess.split('');
 //   const allLettersAcceptable = true;
@@ -25,9 +13,27 @@ const isValidGuess = (guess) => {
 //       allLettersAcceptable = false;
 //     }
 //   })
-//   return guess.length == 4;
-//   // return guess = guess == true ? false : allLettersAcceptable;
+//   return guess.length == 4 && allLettersAcceptable;
 // }
+const isValidGuess = (guess) => {
+  const guessArr = guess.split('');
+  const allLettersAcceptable = true;
+
+  try {
+    guessArr.forEach((letter, index) => {
+      if(letters.indexOf(letter) == -1) {
+        // console.log(letter);
+        throw letter + ' is not acceptable letter!!!';
+        allLettersAcceptable = false;
+      }
+    })
+  } catch(err) {
+    console.log(err);
+  }
+
+  return guess.length == 4 && allLettersAcceptable;
+  // return guess = guess == true ? false : allLettersAcceptable;
+}
 
 const generateHint = (guess) => {
     const guessArr = guess.split('');
@@ -51,4 +57,4 @@ const generateHint = (guess) => {
 generateHint('fcdd');
 
 
-console.log(isValidGuess('efcd'));
+console.log(isValidGuess('qrsd'));
