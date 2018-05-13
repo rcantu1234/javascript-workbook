@@ -69,7 +69,6 @@ const isValidGuess=(guess)=>{
 function mastermind(guess) {
   // solution = 'abcd'; // uncomment this when developing
   // your code here;
-
   if (isValidGuess(guess)) {
 
     if(solution == guess){
