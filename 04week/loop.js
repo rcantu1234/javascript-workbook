@@ -1,3 +1,12 @@
+// Array for carsInReverse
+const carsInReverse = ['Toyota', 'Ford', 'Honda', 'Chevrolet', 'Hyundai'];
+
+// For loop to list elements in carsInReverse
+console.log('List of carsInReverse elements.');
+for(let i = 0; i < carsInReverse.length; i++) {
+  console.log(carsInReverse[i] + ' ');
+}
+
 // Created persons object
 const persons = {
   firstName: "Jane",
@@ -7,11 +16,12 @@ const persons = {
 }
 
 // For loop to view keys
+console.log('\nKeys for persons object : ');
 for(const person in persons) {
     console.log(`${person}`);
 }
 console.log('\n');
-
+//
 // While loop to print 1000 numbers
 console.log('While Loop');
 let j = 1;
