@@ -53,14 +53,21 @@ class Board {
   }
 
   // Your code here
+
 }
 
-class Game {
+class Game extends Board {
   constructor() {
-    this.board = new Board;
+    super();
+    this.board = new Board();
   }
   start() {
     this.board.createGrid();
+  }
+  moveChecker(whichPiece, toWhere) {
+    console.log(whichPiece + ' and ' + toWhere);
+    game.grid[whichPiece][toWhere] = 'R';
+    // return game.viewGrid();
   }
 }
 
@@ -76,7 +83,6 @@ function getPrompt() {
 
 const game = new Game();
 game.start();
-
 
 // Tests
 if (typeof describe === 'function') {
