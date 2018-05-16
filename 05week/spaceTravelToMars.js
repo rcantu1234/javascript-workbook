@@ -18,13 +18,25 @@ class Ship {
     this.crew = crew;
   }
 }
+let ship = new Ship('Mars Ascent Vehicle', 'MAV', 'Ascend into low orbit', 0);
 
 class CrewMember extends Ship {
-  super(name, type, ability, crew, job, specialSkill, ship);
-  this.job = job;
-  this.specialSkill = specialSkill;
-  this.ship = ship;
+  constructor(name, type, ability, crew, crewName, job, specialSkill, ship) {
+    super(name, type, ability, crew);
+    this.crewName = crewName;
+    this.job = job;
+    this.specialSkill = specialSkill;
+    this.ship = ship;
+  }
 }
+
+const crewMember1 = new CrewMember('Mars Ascent Vehicle', 'MAV', 'Ascend into low orbit', 0,
+'Rick Martinez', 'pilot', 'chemistry', 'test');
+
+console.log(crewMember1.crewName);
+console.log(crewMember1.job);
+console.log(crewMember1.specialSkill);
+console.log(crewMember1.ship);
 
 //tests
 if (typeof describe === 'function'){
