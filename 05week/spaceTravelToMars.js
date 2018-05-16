@@ -10,6 +10,21 @@ let jobTypes = {
 };
 
 // Your code here
+class Ship {
+  constructor(name, type, ability, crew) {
+    this.name = name;
+    this.type = type;
+    this.ability = ability;
+    this.crew = crew;
+  }
+}
+
+class CrewMember extends Ship {
+  super(name, type, ability, crew, job, specialSkill, ship);
+  this.job = job;
+  this.specialSkill = specialSkill;
+  this.ship = ship;
+}
 
 //tests
 if (typeof describe === 'function'){
