@@ -15,28 +15,40 @@ class Ship {
     this.name = name;
     this.type = type;
     this.ability = ability;
-    this.crew = crew;
+    this.crew = [];
+
+  }
+  missionStatement() {
+    return this.ability;
   }
 }
-let ship = new Ship('Mars Ascent Vehicle', 'MAV', 'Ascend into low orbit', 0);
 
-class CrewMember extends Ship {
-  constructor(name, type, ability, crew, crewName, job, specialSkill, ship) {
-    super(name, type, ability, crew);
-    this.crewName = crewName;
+
+
+class CrewMember {
+  constructor(name, job, specialSkill, ship) {
+    // super(name, type, ability, crew);
+    this.name = name;
     this.job = job;
     this.specialSkill = specialSkill;
     this.ship = ship;
   }
+  enterShip(ship) {
+    return this.ship;
+  }
 }
+let mav = new Ship('Mars Ascent Vehicle', 'MAV', 'Can\'t perform a mission yet.');
+let hermes = new Ship('Hermes', 'Main Ship', 'Can\'t perform a mission yet.');
+mav.crew.push(1);
+let crewMember1 = new CrewMember('Rick Martinez', 'pilot', 'chemistry');
 
-const crewMember1 = new CrewMember('Mars Ascent Vehicle', 'MAV', 'Ascend into low orbit', 0,
-'Rick Martinez', 'pilot', 'chemistry', 'test');
-
-console.log(crewMember1.crewName);
+crewMember1.ship = mav;
+console.log(crewMember1.name);
 console.log(crewMember1.job);
 console.log(crewMember1.specialSkill);
-console.log(crewMember1.ship);
+console.log(crewMember1.enterShip(mav));
+mav.ability = 'Can\'t perform a mission yet.';
+
 
 //tests
 if (typeof describe === 'function'){
