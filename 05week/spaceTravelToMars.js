@@ -2,6 +2,15 @@
 
 let assert = require('assert');
 
+// 1. Create classes for Ship and CrewMember.
+// 2. Create objects for testing.
+// 3. Push a variable into crew array for testing.
+// 4. Change ability for missionStatement() testing.
+// 5. Tested crew length and object in enterShip(), but
+//    getting errors even though the results are true.
+
+// CANNOT FIGURE HOW TO PASS 2 TESTS OUT OF 4.  SUBMITTING AS IS!!!!
+
 let jobTypes = {
   pilot: 'MAV',
   mechanic: 'Repair Ship',
@@ -23,8 +32,6 @@ class Ship {
   }
 }
 
-
-
 class CrewMember {
   constructor(name, job, specialSkill, ship) {
     // super(name, type, ability, crew);
@@ -34,21 +41,43 @@ class CrewMember {
     this.ship = ship;
   }
   enterShip(ship) {
+    this.ship = ship;
     return this.ship;
   }
 }
-let mav = new Ship('Mars Ascent Vehicle', 'MAV', 'Can\'t perform a mission yet.');
-let hermes = new Ship('Hermes', 'Main Ship', 'Can\'t perform a mission yet.');
+let mav = new Ship('Mars Ascent Vehicle', 'MAV', 'Ascend into low orbit');
+let hermes = new Ship('Hermes', 'Main Ship', 'Interplanetary Space Travel');
+
+// Pushed to values into crew array for testing purposes.
 mav.crew.push(1);
+
+// Created new object of CrewMember for test purposes.
 let crewMember1 = new CrewMember('Rick Martinez', 'pilot', 'chemistry');
 
-crewMember1.ship = mav;
+// Outputting values to make sure the actual values are there.
 console.log(crewMember1.name);
 console.log(crewMember1.job);
 console.log(crewMember1.specialSkill);
 console.log(crewMember1.enterShip(mav));
-mav.ability = 'Can\'t perform a mission yet.';
 
+// Making sure an object is available.
+console.log('\nTEST');
+crewMember1.ship = mav;
+console.log(mav);
+
+// Assigning new ability to see if it is logging.
+mav.ability = 'Can\'t perform a mission yet.';
+hermes.ability = 'Can\'t perform a mission yet.';
+
+// Testing missionStatement() for current ability.
+console.log(mav.missionStatement());
+console.log(hermes.missionStatement());
+
+// Test size of crew array.
+console.log(mav.crew.length === 1);
+
+// Testing for true : output is true, but still not working.
+console.log(crewMember1.ship === crewMember1.enterShip(mav));
 
 //tests
 if (typeof describe === 'function'){
